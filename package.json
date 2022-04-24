@@ -1,6 +1,7 @@
 {
     "name": "frs-my-sb-components",
     "version": "0.1.0",
+    "author": "Francisco Rodriguez",
     "private": false,
     "license": "MIT",
     "typings": "dist/index.d.ts",

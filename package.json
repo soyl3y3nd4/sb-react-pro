@@ -11,8 +11,7 @@
         "url": "https://github.com/soyl3y3nd4/sb-react-pro"
     },
     "peerDependencies": {
-        "react": ">=16",
-        "typescrit": ">=4.0.0"
+        "react": ">=16"
     },
     "release": {
         "branches": [

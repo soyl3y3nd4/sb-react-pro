@@ -1,7 +1,28 @@
 {
-    "name": "my-storybook",
+    "name": "frs-my-sb-components",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
+    "license": "MIT",
+    "typings": "dist/index.d.ts",
+    "main": "dist/index.js",
+    "homepage": "deveser.net",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/soyl3y3nd4/sb-react-pro"
+    },
+    "peerDependencies": {
+        "react": ">=16",
+        "typescrit": ">=4.0.0"
+    },
+    "release": {
+        "branches": [
+            "main"
+        ]
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.4",
@@ -17,7 +38,9 @@
     },
     "scripts": {
         "start": "start-storybook -p 6006",
-        "build": "build-storybook"
+        "build": "yarn clean && tsc && yarn copy-files",
+        "clean": "rimraf dist/",
+        "copy-files": "copyfiles -u src/**/*.css dist/"
     },
     "eslintConfig": {
         "extends": [
@@ -45,6 +68,17 @@
         "@storybook/addon-links": "^6.4.21",
         "@storybook/react": "^6.4.21",
         "@storybook/testing-library": "^0.0.9",
-        "babel-loader": "^8.2.4"
-    }
+        "babel-loader": "^8.2.4",
+        "copyfiles": "^2.4.1",
+        "rimraf": "^3.0.2",
+        "semantic-release": "^19.0.2"
+    },
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/changelog",
+        "@semantic-release/github",
+        "@semantic-release/npm",
+        "@semantic-release/git"
+    ]
 }
